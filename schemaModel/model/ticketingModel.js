@@ -23,6 +23,8 @@ const ticketingSchema = new mongoose.Schema({
         type : internationalSchema,
         required : [true,"International is required"]
     }
+},{
+    timestamps : true
 })
 
 export { ticketingSchema }
