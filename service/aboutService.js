@@ -13,3 +13,10 @@ export const getAllAboutService = async({
     skip = "",
     select = ""
 }) => About.find(find).sort(sort).limit(limit).skip(skip).select(select)
+
+export const updateAboutService = async({id,data}) => About.findByIdAndUpdate(id,data,{
+    new : true, // so that update value is shown in response
+    runValidators : true
+})
+
+export const deleteAboutService = async({id}) => About.findByIdAndDelete(id)
