@@ -51,6 +51,14 @@ const tripbookingSchema = new mongoose.Schema({
 })
 
 const activitiesSchema = new mongoose.Schema({
+    title : {
+        type : String,
+        required : [true,"Title of activities is required"]
+    },
+    description : {
+        type : String,
+        required : [true,"Description of activities is required"]
+    },
     overview : {
         type : String,
         required : [true,"OverView is required"]
