@@ -49,7 +49,7 @@ export const updateContact = catchAsyncError(async(req,res,next) => {
     })
 })
 
-export const deleteContact = catchAsyncError(async(res,req,next) => {
+export const deleteContact = catchAsyncError(async(req,res,next) => {
     let id = req.params.id
     let data = await contactService.deleteContactService({id})
     successResponseData({
