@@ -1,12 +1,16 @@
 import { Router } from "express";
-import { createTripBooking, deleteTripBooking, getAllTripBooking, getSpecifiedTripBooking, updateTripBooking } from "../controller/tripbookingController.js"
+import { tripbookingController } from "../controller/index.js";
 
-const router = Router()
+const tripbookingRouter = Router()
 
-router.post("/add",createTripBooking)
-router.get(":/id",getSpecifiedTripBooking)
-router.get("/all",getAllTripBooking)
-router.put("update/:id",updateTripBooking)
-router.delete("/delete/:id",deleteTripBooking)
+tripbookingRouter
+.route("/")
+.post(tripbookingController.createTripBooking)
 
-export default router;
+tripbookingRouter
+.route("/:id")
+.get(tripbookingController.getSpecifiedTripBooking)
+.put(tripbookingController.updateTripBooking)
+.delete(tripbookingController.deleteTripBooking)
+
+export default tripbookingRouter;
