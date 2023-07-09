@@ -6,6 +6,7 @@ import aboutRoute from './routes/aboutRoute.js'
 import contactRoute from './routes/contactRoute.js'
 import activitiesRoute from './routes/activitiesRoute.js'
 import ticketingRoute from './routes/ticketingRoute.js'
+import tripbookingRoute from './routes/tripbookingRoute.js'
 
 const app = express()
 // app.use(json())
@@ -20,6 +21,7 @@ app.use("/about/",aboutRoute)
 app.use("/contact/",contactRoute)
 app.use("/activities/",activitiesRoute)
 app.use("/ticketing/",ticketingRoute)
+app.use("/tripbooking",tripbookingRoute)
 app.get('/', (req,res)=>{
 res.send('Homepage')
 })

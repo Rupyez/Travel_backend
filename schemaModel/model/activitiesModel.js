@@ -11,7 +11,7 @@ const full_itinerarySchema = new mongoose.Schema({
 //     }
 })
 
- const tripbookingSchema = new mongoose.Schema({
+ const trip_bookingSchema = new mongoose.Schema({
 //     trip_name:{
 //         type : String,
 //         required : [true,"Trip Name is required"]

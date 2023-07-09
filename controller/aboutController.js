@@ -54,9 +54,10 @@ export const deleteAbout = catchAsyncError(async(req,res,next) => {
     let id = req.params.id
     let data = await aboutService.deleteAboutService({id})
     successResponseData({
-        res,
+        res : res,
         message : `About with this ${id} deleted successfully`,
         statusCode : HttpStatus.OK,
+        data
     })
 })
 
