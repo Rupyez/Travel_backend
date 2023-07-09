@@ -1,12 +1,19 @@
 import { Router } from "express";
-import { createAbout, deleteAbout, getAllAbout, getSpecifiedAbout, updateAbout } from "../controller/aboutController.js";
+import { aboutController } from "../controller/index.js";
 
-const router = Router()
 
-router.post("/add", createAbout)
-router.get("/:id",getSpecifiedAbout)
-router.get("/all",getAllAbout)
-router.put("/update/:id",updateAbout)
-router.delete("/delete/:id",deleteAbout)
+const aboutRouter = Router()
 
-export default router;
+aboutRouter
+.route("/")
+.post(aboutController.createAbout)
+
+aboutRouter
+.route("/:id")
+.get(aboutController.getSpecifiedAbout)
+.put(aboutController.updateAbout)
+.delete(aboutController.deleteAbout)
+
+
+export default aboutRouter;
+

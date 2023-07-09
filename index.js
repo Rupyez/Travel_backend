@@ -1,12 +1,8 @@
 import express from 'express'
-import { port, staticFolder } from './config/config.js'
+import { port, staticFolder,apiVersion } from './config/config.js'
 import { connectDb } from './connectDb/db.js'
 import bodyParser from 'body-parser'
-import aboutRoute from './routes/aboutRoute.js'
-import contactRoute from './routes/contactRoute.js'
-import activitiesRoute from './routes/activitiesRoute.js'
-import ticketingRoute from './routes/ticketingRoute.js'
-import tripbookingRoute from './routes/tripbookingRoute.js'
+import apiRouter from './routes/index.js';
 
 const app = express()
 // app.use(json())
@@ -17,11 +13,8 @@ app.use(bodyParser.urlencoded({
 app.use(express.static(staticFolder))
 connectDb()
 
-app.use("/about/",aboutRoute)
-app.use("/contact/",contactRoute)
-app.use("/activities/",activitiesRoute)
-app.use("/ticketing/",ticketingRoute)
-app.use("/tripbooking",tripbookingRoute)
+app.use(`${apiVersion}`,apiRouter)
+
 app.get('/', (req,res)=>{
 res.send('Homepage')
 })

@@ -30,7 +30,7 @@ const tripbookingSchema = new mongoose.Schema({
         type:Date,
         required : true
     },
-    depature_date:{
+    departure_date:{
         type: Date,
         required: true
     },
