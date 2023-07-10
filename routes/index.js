@@ -3,6 +3,7 @@ import aboutRouter from "./aboutRoute.js";
 import contactRouter from "./contactRoute.js";
 import tripbookingRouter from "./tripbookingRoute.js";
 import tripinfoRouter from "./tripinfoRoute.js";
+import categoryRouter from "./categoryRoute.js";
 
 const apiRouter = Router()
 
@@ -22,6 +23,10 @@ const ourRoutes = [
     {
         path : `/tripinfo`,
         router : tripinfoRouter
+    },
+    {
+        path : `/category`,
+        router : categoryRouter
     }
 ]
 ourRoutes.forEach((route) => {

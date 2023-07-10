@@ -8,6 +8,7 @@ import { ticketingSchema } from "./model/ticketingModel.js";
 import userSchema from "./model/userModel.js";
 import tripbookingSchema from "./model/tripbookingModel.js";
 import tripinfoSchema from "./model/tripinfoModel.js";
+import categorySchema from "./model/categoryModel.js";
 
 
 export const About = model("About",aboutSchema)
@@ -17,3 +18,4 @@ export const Ticketing = model("Ticketing",ticketingSchema)
 export const User = model("User",userSchema)
 export const TripBooking = model("TripBooking",tripbookingSchema)
 export const TripInfo = model("TripInfo",tripinfoSchema)
+export const Category = model("Category",categorySchema)
