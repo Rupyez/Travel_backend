@@ -7,3 +7,5 @@ export * as activitiesService from './activitiesService.js';
 export * as ticketingService from './ticketingService.js';
 
 export * as tripbookingService from './tripbookingService.js'
+
+export * as tripinfoService from './tripinfoService.js'
