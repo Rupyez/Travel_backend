@@ -10,8 +10,8 @@ const tripinfoSchema = new mongoose.Schema({
         required : [true,"Description is required"]
     },
     image : {
-        data : Buffer,
-        contentType : String
+        type : String,
+        required : true
     },
     itinerary : {
         type : String,

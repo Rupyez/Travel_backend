@@ -4,6 +4,7 @@ import contactRouter from "./contactRoute.js";
 import tripbookingRouter from "./tripbookingRoute.js";
 import tripinfoRouter from "./tripinfoRoute.js";
 import categoryRouter from "./categoryRoute.js";
+import fileUploadRouter from "./fileUploadRoute.js";
 
 const apiRouter = Router()
 
@@ -27,6 +28,10 @@ const ourRoutes = [
     {
         path : `/category`,
         router : categoryRouter
+    },
+    {
+        path : `/file`,
+        router : fileUploadRouter
     }
 ]
 ourRoutes.forEach((route) => {
