@@ -4,6 +4,10 @@ const categorySchema = new mongoose.Schema({
     title : {
         type : String,
         required : [true,"Title is required"]
+    },
+    TripInfo: {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : "TripInfo"
     }
 },{
     timestamps : true

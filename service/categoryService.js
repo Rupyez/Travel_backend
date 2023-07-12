@@ -2,7 +2,7 @@ import { Category } from "../schemaModel/model.js";
 
 export const createCategoryService = async({data}) => Category.create(data)
 
-export const getSpecifiedCategoryService = async({id}) => Category.findById(id)
+export const getSpecifiedCategoryService = async({id}) => Category.findById(id).populate("TripInfo")
 
 export const getAllCategoryService = async({
     find = {},
@@ -10,7 +10,7 @@ export const getAllCategoryService = async({
     limit = "",
     skip = "",
     select = ""
-}) => Category.find(find).sort(sort).limit(limit).skip(skip).select(select)
+}) => Category.find(find).sort(sort).limit(limit).skip(skip).select(select).populate("TripInfo")
 
 export const updateCategoryService = async({data,id}) => Category.findByIdAndUpdate(id,data,{
     new : true,

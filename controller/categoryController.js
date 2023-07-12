@@ -2,11 +2,19 @@ import { HttpStatus } from "../constant/constant.js";
 import successResponseData from "../helper/sucessResponseData.js";
 import catchAsyncError from "../middleware/catchAsyncError.js";
 import { categoryService } from "../service/index.js";
+import { TripInfo } from "../schemaModel/model.js";
 
 
 export const createCategory = catchAsyncError(async(req,res) => {
     let body = req.body
     let data = await categoryService.createCategoryService({data:body})
+
+    // category 
+    const tripInformation = await TripInfo.findById(req.body.TripInfo)
+    if(!tripInformation){
+        return res.status(400).json({sucess : false,
+        tripInformation})
+    }
     successResponseData({
         res : res,
         message : "Category is created sucesfully",
