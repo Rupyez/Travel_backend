@@ -36,3 +36,26 @@ export const getAllSearch = catchAsyncError(async(req,res,next) => {
     req.service = await searchService.getAllSearchService
     next()
 })
+
+export const updateSearch = catchAsyncError(async(req,res,next) => {
+    let body = req.body
+    let id = req.params.id
+    let data = await searchService.updateSearchService({data : body,id })
+    successResponseData({
+        res : res,
+        message : `Search with these ${id} updated sucessfully`,
+        statusCode : HttpStatus.CREATED,
+        data
+    })
+})
+
+export const deleteSearch = catchAsyncError(async(req,res,next) => {
+    let id = req.params.id
+    let data = await searchService.deleteSearchService({id})
+    successResponseData({
+        res : res,
+        message : `Search with this ${id} deleted sucessfully`,
+        statusCode : HttpStatus.OK,
+        data
+    })
+})
