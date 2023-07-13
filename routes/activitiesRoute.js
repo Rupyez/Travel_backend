@@ -1,10 +1,16 @@
 import { Router } from "express";
-import { createActivities, getAllActivities, getSpecifiedActivities} from "../controller/activitiesController.js";
+import { activitiesController } from "../controller/index.js";
 
-const router = Router()
+const activitiesRouter = Router()
 
-router.post('/add',createActivities)
-router.get('/:id',getSpecifiedActivities)
-router.get('/all',getAllActivities)
+activitiesRouter
+.route("/")
+.post(activitiesController.createActivities)
 
-export default router;
+activitiesRouter
+.route("/:id")
+.get(activitiesController.getSpecifiedActivities)
+.put(activitiesController.updateActivities)
+.delete(activitiesController.deleteActivities)
+
+export default activitiesRouter;

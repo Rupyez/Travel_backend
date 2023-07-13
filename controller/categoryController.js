@@ -12,7 +12,7 @@ export const createCategory = catchAsyncError(async(req,res) => {
     // category 
     const tripInformation = await TripInfo.findById(req.body.TripInfo)
     if(!tripInformation){
-        return res.status(400).json({sucess : false,
+        return res.status(400).json({success : false,
         tripInformation})
     }
     successResponseData({

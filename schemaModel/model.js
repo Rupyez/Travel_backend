@@ -3,7 +3,7 @@ import { model } from "mongoose";
 
 import aboutSchema from "./model/aboutModel.js";
 import contactSchema from "./model/contactModel.js";
-import { activitiesSchema } from "./model/activitiesModel.js";
+import activitiesSchema  from "./model/activitiesModel.js";
 import { ticketingSchema } from "./model/ticketingModel.js";
 import userSchema from "./model/userModel.js";
 import tripbookingSchema from "./model/tripbookingModel.js";
