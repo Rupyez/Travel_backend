@@ -1,0 +1,18 @@
+import mongoose from "mongoose";
+
+const reviewSchema = new mongoose.Schema({
+    image : {
+        type : String,
+        required : [true, "Image is required"]
+    },
+    description : {
+        type : String,
+        required : [true, "Description is required"]
+    },
+    author : {
+        type : String,
+        required : [ true, "Author is required"]
+    }
+})
+
+export default reviewSchema

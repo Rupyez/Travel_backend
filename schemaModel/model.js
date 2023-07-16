@@ -10,6 +10,7 @@ import tripbookingSchema from "./model/tripbookingModel.js";
 import tripinfoSchema from "./model/tripinfoModel.js";
 import categorySchema from "./model/categoryModel.js";
 import searchSchema from "./model/searchModel.js";
+import reviewSchema from "./model/reviewModel.js";
 
 
 export const About = model("About",aboutSchema)
@@ -21,3 +22,4 @@ export const TripBooking = model("TripBooking",tripbookingSchema)
 export const TripInfo = model("TripInfo",tripinfoSchema)
 export const Category = model("Category",categorySchema)
 export const Search= model("Search",searchSchema)
+export const Review = model("Review",reviewSchema)

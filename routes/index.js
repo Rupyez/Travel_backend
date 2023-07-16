@@ -7,6 +7,7 @@ import categoryRouter from "./categoryRoute.js";
 import fileUploadRouter from "./fileUploadRoute.js";
 import searchRouter from "./searchRoute.js";
 import activitiesRouter from "./activitiesRoute.js";
+import reviewRouter from "./reviewRoute.js";
 
 const apiRouter = Router()
 
@@ -42,6 +43,10 @@ const ourRoutes = [
     {
         path : `/activities`,
         router : activitiesRouter
+    },
+    {
+        path : `/review`,
+        router : reviewRouter
     }
 ]
 ourRoutes.forEach((route) => {
