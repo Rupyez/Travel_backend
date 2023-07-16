@@ -8,6 +8,10 @@ const categorySchema = new mongoose.Schema({
     TripInfo: {
         type : mongoose.Schema.Types.ObjectId,
         ref : "TripInfo"
+    },
+    TripBooking : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : "TripBooking"
     }
 },{
     timestamps : true
