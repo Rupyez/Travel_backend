@@ -8,6 +8,7 @@ import fileUploadRouter from "./fileUploadRoute.js";
 import searchRouter from "./searchRoute.js";
 import activitiesRouter from "./activitiesRoute.js";
 import reviewRouter from "./reviewRoute.js";
+import userRouter from "./userRoutes.js";
 
 const apiRouter = Router()
 
@@ -47,6 +48,10 @@ const ourRoutes = [
     {
         path : `/review`,
         router : reviewRouter
+    },
+    {
+        path : `/user`,
+        router : userRouter
     }
 ]
 ourRoutes.forEach((route) => {

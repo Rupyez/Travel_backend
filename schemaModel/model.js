@@ -11,6 +11,7 @@ import tripinfoSchema from "./model/tripinfoModel.js";
 import categorySchema from "./model/categoryModel.js";
 import searchSchema from "./model/searchModel.js";
 import reviewSchema from "./model/reviewModel.js";
+import tokenSchema from "./model/tokenModel.js"
 
 
 export const About = model("About",aboutSchema)
@@ -23,3 +24,4 @@ export const TripInfo = model("TripInfo",tripinfoSchema)
 export const Category = model("Category",categorySchema)
 export const Search= model("Search",searchSchema)
 export const Review = model("Review",reviewSchema)
+export const TokenData = model("TokenData",tokenSchema)

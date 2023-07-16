@@ -15,3 +15,5 @@ export * as categoryService from './categoryService.js';
 export * as searchService from './searchService.js'
 
 export * as reviewService from './reviewService.js'
+
+export * as userService from './userService.js';
