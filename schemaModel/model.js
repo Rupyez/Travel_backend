@@ -12,6 +12,7 @@ import categorySchema from "./model/categoryModel.js";
 import searchSchema from "./model/searchModel.js";
 import reviewSchema from "./model/reviewModel.js";
 import tokenSchema from "./model/tokenModel.js"
+import socialmediaSchema from "./model/socialmediaModel.js";
 
 
 export const About = model("About",aboutSchema)
@@ -25,3 +26,4 @@ export const Category = model("Category",categorySchema)
 export const Search= model("Search",searchSchema)
 export const Review = model("Review",reviewSchema)
 export const TokenData = model("TokenData",tokenSchema)
+export const SocialMedia = model("SocialMedia",socialmediaSchema)

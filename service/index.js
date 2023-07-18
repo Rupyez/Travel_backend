@@ -17,3 +17,5 @@ export * as searchService from './searchService.js'
 export * as reviewService from './reviewService.js'
 
 export * as userService from './userService.js';
+
+export * as socialmediaService from './socialmediaService.js';

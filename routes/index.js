@@ -9,6 +9,7 @@ import searchRouter from "./searchRoute.js";
 import activitiesRouter from "./activitiesRoute.js";
 import reviewRouter from "./reviewRoute.js";
 import userRouter from "./userRoutes.js";
+import socialmediaRouter from "./socialmediaRoute.js";
 
 const apiRouter = Router()
 
@@ -52,6 +53,10 @@ const ourRoutes = [
     {
         path : `/user`,
         router : userRouter
+    },
+    {
+        path : `/social`,
+        router : socialmediaRouter
     }
 ]
 ourRoutes.forEach((route) => {
