@@ -13,6 +13,8 @@ const reviewSchema = new mongoose.Schema({
         type : String,
         required : [ true, "Author is required"]
     }
+},{
+    timestamps : true
 })
 
 export default reviewSchema
