@@ -10,3 +10,6 @@ export const apiVersion = process.env.API_VERSION
 
 
 export const staticFolder = "./public"
+
+export const expiryIn = process.env.EXPIRY_IN
+export const secretKey = process.env.SECRET_KEY
