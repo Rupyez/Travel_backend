@@ -64,3 +64,17 @@ export const logoutUser = catchAsyncErrors(async(req,res) => {
         statusCode : HttpStatus.OK,
     })
 })
+
+export const getAllUser = catchAsyncErrors(async(req,res,next) => {
+    let find = {};
+    if (req.query.email) {
+        find.email = { $regex: req.query.email, $options: "i" };
+    }
+    if (req.query.firstName) {
+        find.firstName = req.query.firstName;
+    }
+    req.find = find;
+    req.service = userService.getAllUserService;
+    req.myOwnSelect = "-password";
+    next();
+})

@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { aboutController } from "../controller/index.js";
+import { sortFilterPagination } from "../middleware/sortSelectPage.js";
 
 
 const aboutRouter = Router()
@@ -7,6 +8,7 @@ const aboutRouter = Router()
 aboutRouter
 .route("/")
 .post(aboutController.createAbout)
+.get(aboutController.getAllAbout, sortFilterPagination)
 
 aboutRouter
 .route("/:id")

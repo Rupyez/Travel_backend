@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { userController } from "../controller/index.js";
+import { sortFilterPagination } from "../middleware/sortSelectPage.js";
 
 
 const userRouter = Router()
@@ -15,6 +16,10 @@ userRouter
 userRouter
 .route("/logout")
 .post(userController.logoutUser)
+
+userRouter
+.route("/all")
+.get(userController.getAllUser,sortFilterPagination)
 
 
 export default userRouter;
