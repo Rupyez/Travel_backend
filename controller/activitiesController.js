@@ -42,7 +42,7 @@ export const getSpecifiedActivities = catchAsyncError(async(req,res) => {
 export const getAllActivities = catchAsyncError(async(req,res,next) => {
     let find = {}
     req.find = find
-    req.service = activitiesService.getAllActivities
+    req.service = await activitiesService.getAllActivitiesService
     next()
 })
 
