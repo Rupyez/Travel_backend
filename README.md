@@ -28,6 +28,7 @@ Install dependencies
 ## Run express server
 ```bash
   npm run dev
+```
 
 ## Run hosted backend
 ``` 
