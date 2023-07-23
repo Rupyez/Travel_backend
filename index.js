@@ -19,8 +19,8 @@ app.use(`${apiVersion}`,apiRouter)
 // cors to let browser access the hosted backend
 
 app.use(cors({
-    origin : "*",
-    methods : "GET, POST, PUT, DELETE",
+    origin : '*',
+    methods : 'GET, POST, PUT, DELETE',
     credentials : true
 }));
 
