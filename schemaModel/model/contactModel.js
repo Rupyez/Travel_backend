@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const contactSchema = new mongoose.Schema({
      contact_number : {
-        type : Number,
+        type : String,
         required : [true,"Contact number must not be blank"]
      },
      address :{
@@ -12,10 +12,6 @@ const contactSchema = new mongoose.Schema({
      email:{
           type : String,
           required : [true,"Email must be provided"]
-     },
-     inquiry:{
-          type : String,
-          required : [true,]
      }
 },{
      timestamps : true
