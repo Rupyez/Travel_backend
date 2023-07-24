@@ -2,10 +2,19 @@ import { HttpStatus } from "../constant/constant.js";
 import successResponseData from "../helper/sucessResponseData.js";
 import catchAsyncError from "../middleware/catchAsyncError.js";
 import { tripinfoService } from "../service/index.js";
+import { TripCategory } from "../schemaModel/model.js";
 
 export const createTripInfo = catchAsyncError(async(req,res) => {
     let body = req.body
     let data = await tripinfoService.createTripInfoService({data:body})
+
+    // populating TripCategory in tripinfo
+    const tripCategory = await TripCategory.findById(req.body.TripCategory)
+    if(!tripCategory) {
+        return res.status(400).json({ success : false,
+        tripCategory})
+    }
+
     successResponseData({
         res : res,
         message : "Trip Info created sucessfully",

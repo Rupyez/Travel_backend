@@ -44,6 +44,10 @@ const tripinfoSchema = new mongoose.Schema({
     overview : {
         type : String,
         required : [true]
+    },
+    TripCategory : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : "TripCategory"
     }
 },{
     timestamps : true 
