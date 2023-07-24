@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const reviewSchema = new mongoose.Schema({
     image : {
         type : String,
-        required : [true, "Image is required"]
+        //required : [true, "Image is required"]
     },
     description : {
         type : String,
