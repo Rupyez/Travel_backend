@@ -6,7 +6,7 @@ import tripinfoRouter from "./tripinfoRoute.js";
 import categoryRouter from "./categoryRoute.js";
 import fileUploadRouter from "./fileUploadRoute.js";
 import searchRouter from "./searchRoute.js";
-import activitiesRouter from "./activitiesRoute.js";
+import tripcategoryRouter from "./tripcategoryRoute.js";
 import reviewRouter from "./reviewRoute.js";
 import userRouter from "./userRoutes.js";
 import socialmediaRouter from "./socialmediaRoute.js";
@@ -43,8 +43,8 @@ const ourRoutes = [
         router : searchRouter
     }, 
     {
-        path : `/activities`,
-        router : activitiesRouter
+        path : `/tripcategory`,
+        router : tripcategoryRouter
     },
     {
         path : `/review`,
