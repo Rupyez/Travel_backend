@@ -3,7 +3,9 @@ import { port, staticFolder,apiVersion } from './config/config.js'
 import { connectDb } from './connectDb/db.js'
 import bodyParser from 'body-parser'
 import apiRouter from './routes/index.js';
-import cors from 'cors';
+// import cors from 'cors';
+const cors = require("cors")
+
 
 const app = express()
 // app.use(json())
@@ -24,7 +26,8 @@ app.use(`${apiVersion}`,apiRouter)
 //     credentials : true
 // }));
 
-app.use(cors({ origin: "*" }))
+// app.use(cors({ origin: "*" }))
+app.use(cors())
 
 app.get('/', (req,res)=>{
 res.send('Homepage')
