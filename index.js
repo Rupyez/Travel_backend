@@ -3,8 +3,7 @@ import { port, staticFolder,apiVersion } from './config/config.js'
 import { connectDb } from './connectDb/db.js'
 import bodyParser from 'body-parser'
 import apiRouter from './routes/index.js';
-// import cors from 'cors';
-const cors = require("cors")
+import cors from 'cors';
 
 
 const app = express()
