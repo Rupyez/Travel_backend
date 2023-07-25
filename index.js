@@ -18,13 +18,12 @@ connectDb()
 app.use(`${apiVersion}`,apiRouter)
 
 // cors to let browser access the hosted backend
-
-app.use(cors({
-    origin : 'http://localhost:3000',
-    methods : 'GET, POST, PUT, DELETE',
-    credentials : true
-}));
-
+// app.use(cors({
+//     origin : 'http://localhost:3000',
+//     methods : 'GET, POST, PUT, DELETE',
+//     credentials : true
+// }));
+app.use(cors)
 
 
 app.get('/', (req,res)=>{
