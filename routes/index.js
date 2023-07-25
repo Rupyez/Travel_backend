@@ -9,6 +9,7 @@ import tripcategoryRouter from "./tripcategoryRoute.js";
 import reviewRouter from "./reviewRoute.js";
 import userRouter from "./userRoutes.js";
 import socialmediaRouter from "./socialmediaRoute.js";
+import inquiryRouter from "./inquiryRoute.js"
 
 const apiRouter = Router()
 
@@ -52,6 +53,10 @@ const ourRoutes = [
     {
         path : `/social`,
         router : socialmediaRouter
+    },
+    {
+        path : `/inquiry`,
+        router : inquiryRouter
     }
 ]
 ourRoutes.forEach((route) => {
