@@ -10,8 +10,6 @@ export * as tripbookingService from './tripbookingService.js';
 
 export * as tripinfoService from './tripinfoService.js';
 
-export * as categoryService from './categoryService.js';
-
 export * as searchService from './searchService.js'
 
 export * as reviewService from './reviewService.js'
