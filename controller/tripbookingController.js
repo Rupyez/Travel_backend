@@ -2,10 +2,19 @@ import { HttpStatus } from "../constant/constant.js";
 import successResponseData from "../helper/sucessResponseData.js";
 import catchAsyncError from "../middleware/catchAsyncError.js";
 import { tripbookingService } from "../service/index.js";
+import { TripCategory } from "../schemaModel/model.js";
 
 export const createTripBooking = catchAsyncError(async(req,res) => {
     let body = req.body
     let data = await tripbookingService.createTripBookingService({data:body})
+
+    // populating TripCategory in tripbooking
+    const tripCategory = await TripCategory.findById(req.body.TripCategory)
+    if(!tripCategory){
+        return res.status(400).json({ success : false,
+        tripCategory})
+    }
+
     successResponseData({
         res : res,
         message : "Trip Booking created Successfully",
@@ -37,7 +46,7 @@ export const getAllTripBooking = catchAsyncError(async(req,res,next) =>{
     next()
 })
 
-export const updateTripBooking = catchAsyncError(async(res,req,next) => {
+export const updateTripBooking = catchAsyncError(async(req,res,next) => {
     let body = req.body 
     let id = req.params.id
     let data = await tripbookingService.updateTripBookingService({ data : body,id })
@@ -49,12 +58,13 @@ export const updateTripBooking = catchAsyncError(async(res,req,next) => {
     })
 })
 
-export const deleteTripBooking = catchAsyncError(async(res,req,next) => {
+export const deleteTripBooking = catchAsyncError(async(req,res,next) => {
     let id = req.params.id
     let data = await tripbookingService.deleteTripBookingService({id})
     successResponseData({
         res : res,
         message : `Trip Booking with this ${id} deleted sucessfully`,
-        statusCode : HttpStatus.OK
+        statusCode : HttpStatus.OK,
+        data
     })
 })

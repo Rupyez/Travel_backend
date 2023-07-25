@@ -37,6 +37,10 @@ const tripbookingSchema = new mongoose.Schema({
     message:{
         type:String,
         // required : true
+    },
+    TripCategory : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : "TripCategory"
     }
 },{
     timestamps : true 
