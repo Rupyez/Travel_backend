@@ -4,7 +4,8 @@ import { userService } from "../service/index.js";
 import successResponseData from "../helper/sucessResponseData.js";
 import { HttpStatus } from "../constant/constant.js";
 import { generateToken } from "../Utils/token.js";
-import { expiryIn, secretKey } from "../config/config.js";
+import { expiryIn, fromEmail, secretKey } from "../config/config.js";
+import { sendMail } from "../Utils/sendMail.js";
 
 // create a user 
 export const createUser = catchAsyncErrors(async(req,res,next) => {
@@ -14,6 +15,25 @@ export const createUser = catchAsyncErrors(async(req,res,next) => {
     let passHashedPassword = await hashPassword(body.password)
     body.password = passHashedPassword
     let data = await userService.createUserService({body})
+
+    // send mail 
+    await sendMail({
+        from: `Ticketing <${fromEmail}>`,
+        to: [req.body.email],
+    
+        // to: ["", ""],
+    
+        subject: "Email Confirmation",
+        html: `
+        <div><h3>Mr./Mrs. ${req.body.username},</h3>
+        <p>You have been successfully registered as user</p>
+        <p>You will be contacted within 5 business days to update you about the further enrollment process and other related details</p>
+        <p>Your registration details are as follows.</p>
+        <p>Name: ${req.body.username}</p>
+        </div>
+        `,
+      });
+
     successResponseData({
         res : res,
         message : "User is created successfully",

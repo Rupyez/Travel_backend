@@ -13,3 +13,10 @@ export const staticFolder = "./public"
 
 export const expiryIn = process.env.EXPIRY_IN
 export const secretKey = process.env.SECRET_KEY
+
+// email configurations
+export const fromEmail = process.env.FROM_EMAIL;
+export const fromPassword = process.env.FROM_PASSWORD;
+export const emailHost = process.env.EMAIL_HOST;
+export const emailPort = process.env.EMAIL_PORT;
+export const emailSecure = process.env.EMAIL_SECURE;
