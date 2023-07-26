@@ -6,6 +6,7 @@ import { HttpStatus } from "../constant/constant.js";
 import { generateToken } from "../Utils/token.js";
 import { expiryIn, fromEmail, secretKey } from "../config/config.js";
 import { sendMail } from "../Utils/sendMail.js";
+import errorMiddleware from "../middleware/errorMiddleware.js";
 
 // create a user 
 export const createUser = catchAsyncErrors(async(req,res,next) => {
@@ -47,7 +48,7 @@ export let loginUser = catchAsyncErrors(async(req,res) => {
     let password = req.body.password
     let user = await userService.getSpecificUserByAny({ email })
     if(user === null){
-        let error = new Error("Please enter valid email or password")
+        let error = new errorMiddleware("Please enter valid email or password")
         error.statusCode = HttpStatus.UNAUTHORIZED
         throw error 
     } else {
