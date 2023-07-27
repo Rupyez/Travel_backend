@@ -3,6 +3,8 @@ import successResponseData from "../helper/sucessResponseData.js";
 import catchAsyncError from "../middleware/catchAsyncError.js";
 import { tripbookingService } from "../service/index.js";
 import { TripCategory } from "../schemaModel/model.js";
+import { sendMail } from "../Utils/sendMail.js";
+import { fromEmail } from "../config/config.js";
 
 export const createTripBooking = catchAsyncError(async(req,res) => {
     let body = req.body
@@ -14,6 +16,24 @@ export const createTripBooking = catchAsyncError(async(req,res) => {
         return res.status(400).json({ success : false,
         tripCategory})
     }
+
+    // sending mail while creating tripbooking
+    await sendMail({
+        from: `Trip Booking Confirmation<${fromEmail}>`,
+        to: [req.body.email],
+        subject: "Email Confirmation",
+        html: `
+        <div><h3>Mr./Mrs. ${req.body.full_name},</h3>
+        <p>You have been successfully booked a Trip</p>
+        <p>You will be contacted within 5 business days to update you about the further process and other related details</p>
+        <p>Your booking details are as follows.</p>
+        <p>Name: ${req.body.full_name}</p>
+        <p>Trip Name: ${req.body.trip_name}</p>
+        <p>Email: ${req.body.email}</p>
+        <p>Contact Number: ${req.body.contact_number}</p>
+        </div>
+        `,
+    });
 
     successResponseData({
         res : res,

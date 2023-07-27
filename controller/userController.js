@@ -19,7 +19,7 @@ export const createUser = catchAsyncErrors(async(req,res,next) => {
 
     // send mail 
     await sendMail({
-        from: `Ticketing <${fromEmail}>`,
+        from: `Ticketing User Confirmation<${fromEmail}>`,
         to: [req.body.email],
     
         // to: ["", ""],
@@ -28,9 +28,11 @@ export const createUser = catchAsyncErrors(async(req,res,next) => {
         html: `
         <div><h3>Mr./Mrs. ${req.body.username},</h3>
         <p>You have been successfully registered as user</p>
-        <p>You will be contacted within 5 business days to update you about the further enrollment process and other related details</p>
+        <p>You will be contacted within 5 business days to update you about the further booking process and other related details</p>
         <p>Your registration details are as follows.</p>
         <p>Name: ${req.body.username}</p>
+        <p>Email: ${req.body.email}</p>
+        <p>Password : ${req.body.password}</p>
         </div>
         `,
       });

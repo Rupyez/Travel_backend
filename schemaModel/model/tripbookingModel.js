@@ -12,7 +12,7 @@ const tripbookingSchema = new mongoose.Schema({
     email:{
         type : String,
         required : [true,"Email is required"],
-        unique : true
+        //unique : true
     },
     country:{
         type : String,
