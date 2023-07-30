@@ -20,3 +20,13 @@ export const fromPassword = process.env.FROM_PASSWORD;
 export const emailHost = process.env.EMAIL_HOST;
 export const emailPort = process.env.EMAIL_PORT;
 export const emailSecure = process.env.EMAIL_SECURE;
+const envirnoment = process.env.ENVIRONMENT ||  'test'
+
+let baseUrl = " ";
+if (envirnoment === "development") {
+  baseUrl = `http://localhost:${port}`;
+} else if (envirnoment === "test") {
+   baseUrl = `https://travel-backend-cyan.vercel.app`;
+} else if (envirnoment === "production") {
+  baseUrl = ``;
+}

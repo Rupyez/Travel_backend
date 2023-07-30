@@ -4,8 +4,9 @@ const createFile = (req,res) => {
     if(req.file){
         //let fileName = req.file.location
         let fileName = req.file.filename
-        let path = { path: `${base_url}/${fileName}` };
+        //let path = { path: `${base_url}/${fileName}` };
         console.log(port);
+        let path = {path : `https://travel-backend-cyan.vercel.app/`}
         let successJson = {
             status: "success",
             message: "File uploaded successfully.",
