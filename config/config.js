@@ -26,7 +26,8 @@ let baseUrl = " ";
 if (envirnoment === "development") {
   baseUrl = `http://localhost:${port}`;
 } else if (envirnoment === "test") {
-   baseUrl = `https://travel-backend-cyan.vercel.app`;
+   //baseUrl = `https://travel-backend-cyan.vercel.app/`;
+   baseUrl = `https://travel-backend-sf6l.onrender.com`
 } else if (envirnoment === "production") {
   baseUrl = ``;
 }

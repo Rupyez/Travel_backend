@@ -32,5 +32,5 @@ Install dependencies
 
 ## Run hosted backend
 ``` 
-https://travel-backend-cyan.vercel.app/
+https://travel-backend-sf6l.onrender.com
 ```
