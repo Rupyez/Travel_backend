@@ -12,6 +12,10 @@ const reviewSchema = new mongoose.Schema({
     author : {
         type : String,
         required : [ true, "Author is required"]
+    },
+    country :{
+        type : String,
+        required : [true,"Country is required"]
     }
 },{
     timestamps : true

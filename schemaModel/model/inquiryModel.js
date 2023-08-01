@@ -8,7 +8,7 @@ const inquirySchema = new mongoose.Schema({
     email: {
         type: String,
         required: [true, "Email is required"],
-        unique: true
+        //unique: true
     },
     phone_number : {
         type : String,
@@ -17,6 +17,11 @@ const inquirySchema = new mongoose.Schema({
     message : {
         type: String,
         required: [true, "Message is required"]
+    },
+    seen : {
+        type : Boolean,
+        default : false,
+        description : "For admin use,set to false by default"
     }
 },{
     timestamps : true

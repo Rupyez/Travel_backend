@@ -2,7 +2,7 @@ import { SocialMedia } from "../schemaModel/model.js";
 
 export const createSocialMediaService = async({data}) => SocialMedia.create(data)
 
-export const getSpecifiedSocialMediaService = async({id}) => SocialMedia.findById(id).populate("User")
+export const getSpecifiedSocialMediaService = async({id}) => SocialMedia.findById(id)
 
 export const getAllSoicalMediaService = async({
     find = {},
@@ -10,7 +10,7 @@ export const getAllSoicalMediaService = async({
     limit = "",
     skip = "",
     select = ""
-}) => SocialMedia.find(find).sort(sort).limit(limit).skip(skip).select(select).populate("User")
+}) => SocialMedia.find(find).sort(sort).limit(limit).skip(skip).select(select)
 
 export const updateSocialMediaService = async({data,id}) => SocialMedia.findByIdAndUpdate(id,data,{
     new : true,
