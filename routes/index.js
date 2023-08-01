@@ -10,6 +10,7 @@ import reviewRouter from "./reviewRoute.js";
 import userRouter from "./userRoutes.js";
 import socialmediaRouter from "./socialmediaRoute.js";
 import inquiryRouter from "./inquiryRoute.js"
+import searchfeatureRouter from "./searchfeatureRoute.js";
 
 const apiRouter = Router()
 
@@ -57,6 +58,10 @@ const ourRoutes = [
     {
         path : `/inquiry`,
         router : inquiryRouter
+    },
+    {
+        path : `/searchfeature`,
+        router : searchfeatureRouter
     }
 ]
 ourRoutes.forEach((route) => {
