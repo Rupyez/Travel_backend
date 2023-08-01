@@ -41,6 +41,11 @@ const tripbookingSchema = new mongoose.Schema({
     TripCategory : {
         type : mongoose.Schema.Types.ObjectId,
         ref : "TripCategory"
+    },
+    seen : {
+        type : Boolean,
+        default : false,
+        description : "For admin use only, false is set to default value"
     }
 },{
     timestamps : true 
