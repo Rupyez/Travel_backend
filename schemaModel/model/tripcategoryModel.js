@@ -8,6 +8,10 @@
     image : {
         type : String,
         required : [true,"Image of trip_category is required"]
+    },
+    priority : {
+        type : Number,
+        default : 0 
     }
 },{
     timestamps : true
