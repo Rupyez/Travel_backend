@@ -2,7 +2,7 @@ import { HttpStatus } from "../constant/constant.js";
 import successResponseData from "../helper/sucessResponseData.js";
 import catchAsyncError from "../middleware/catchAsyncError.js";
 import { tripbookingService } from "../service/index.js";
-import { TripCategory } from "../schemaModel/model.js";
+import { TripInfo } from "../schemaModel/model.js";
 import { sendMail } from "../Utils/sendMail.js";
 import { fromEmail } from "../config/config.js";
 
@@ -10,11 +10,11 @@ export const createTripBooking = catchAsyncError(async(req,res) => {
     let body = req.body
     let data = await tripbookingService.createTripBookingService({data:body})
 
-    // populating TripCategory in tripbooking
-    const tripCategory = await TripCategory.findById(req.body.TripCategory)
-    if(!tripCategory){
+    // populating Tripinfo in tripbooking
+    const tripinfo= await TripInfo.findById(req.body.TripInfo)
+    if(!tripinfo){
         return res.status(400).json({ success : false,
-        tripCategory})
+        tripinfo})
     }
 
     // sending mail while creating tripbooking
@@ -28,7 +28,6 @@ export const createTripBooking = catchAsyncError(async(req,res) => {
         <p>You will be contacted within 5 business days to update you about the further process and other related details</p>
         <p>Your booking details are as follows.</p>
         <p>Name: ${req.body.full_name}</p>
-        <p>Trip Name: ${req.body.trip_name}</p>
         <p>Email: ${req.body.email}</p>
         <p>Contact Number: ${req.body.contact_number}</p>
         </div>
