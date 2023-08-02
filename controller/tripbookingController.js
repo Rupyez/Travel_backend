@@ -29,6 +29,7 @@ export const createTripBooking = catchAsyncError(async(req,res) => {
         <p>Your booking details are as follows.</p>
         <p>Name: ${req.body.full_name}</p>
         <p>Email: ${req.body.email}</p>
+        <p>Trip Name: ${req.body.trip_name}</p>
         <p>Contact Number: ${req.body.contact_number}</p>
         </div>
         `,
