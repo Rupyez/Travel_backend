@@ -38,10 +38,6 @@ const tripbookingSchema = new mongoose.Schema({
         type:String,
         // required : true
     },
-    TripCategory : {
-        type : mongoose.Schema.Types.ObjectId,
-        ref : "TripCategory"
-    },
     seen : {
         type : Boolean,
         default : false,
