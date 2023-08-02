@@ -1,10 +1,6 @@
 import mongoose from "mongoose";
 
 const tripbookingSchema = new mongoose.Schema({
-    trip_name:{
-        type : String,
-        required : [true,"Trip Name is required"]
-    },
     full_name:{
         type : String,
         required : [true,"Fullname is required"]
@@ -38,9 +34,9 @@ const tripbookingSchema = new mongoose.Schema({
         type:String,
         // required : true
     },
-    TripCategory : {
+    TripInfo : {
         type : mongoose.Schema.Types.ObjectId,
-        ref : "TripCategory"
+        ref : "TripInfo"
     },
     seen : {
         type : Boolean,
